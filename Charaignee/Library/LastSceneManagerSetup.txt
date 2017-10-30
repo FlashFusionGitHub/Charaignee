@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Scenes/greyboxTest.unity
+  isLoaded: 1
+  isActive: 1
