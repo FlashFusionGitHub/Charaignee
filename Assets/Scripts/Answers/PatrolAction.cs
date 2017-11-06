@@ -8,7 +8,7 @@ public class PatrolAction : AIBehaviour
 {
     private int waypoint_number = 0;
 
-    private Waypoint waypoints;
+    public Waypoint waypoints;
     public float patrol_point_timer = 0;
     public int patrol_point_time;
     public PlayerWithinPurseRange player_within_pursue_range;
@@ -27,7 +27,7 @@ public class PatrolAction : AIBehaviour
 
             if (patrol_point_timer <= 0)
             {
-                waypoint_number = Random.Range(1, 90);
+                waypoint_number = Random.Range(1, 7);
                 patrol_point_timer = patrol_point_time;
             }
 
