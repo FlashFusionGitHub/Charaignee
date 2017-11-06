@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: ab7e4370df856f341bfa80c000ae967d
-timeCreated: 1509319922
+guid: 20842fb5e0aeeb44b831ee4ed1b58641
+timeCreated: 1509932067
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Door_Housing_V001_GEO
-    100004: Left_Door_V001_GEO
-    100006: Right_Door_V001_GEO
     400000: //RootNode
-    400002: Door_Housing_V001_GEO
-    400004: Left_Door_V001_GEO
-    400006: Right_Door_V001_GEO
-    2300000: Door_Housing_V001_GEO
-    2300002: Left_Door_V001_GEO
-    2300004: Right_Door_V001_GEO
-    3300000: Door_Housing_V001_GEO
-    3300002: Left_Door_V001_GEO
-    3300004: Right_Door_V001_GEO
-    4300000: Door_Housing_V001_GEO
-    4300002: Left_Door_V001_GEO
-    4300004: Right_Door_V001_GEO
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Left_Door_V001_GEO1
     9500000: //RootNode
   materials:
     importMaterials: 1

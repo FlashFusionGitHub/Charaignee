@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 465ffcd2ba71466468efe8829d5995ce
-timeCreated: 1509319922
+guid: 723a2aa0e98763043b4f8fb166972949
+timeCreated: 1509932094
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Left_Gate_V001_GEO
-    100004: Right_Gate_V001_GEO
     400000: //RootNode
-    400002: Left_Gate_V001_GEO
-    400004: Right_Gate_V001_GEO
-    2300000: Left_Gate_V001_GEO
-    2300002: Right_Gate_V001_GEO
-    3300000: Left_Gate_V001_GEO
-    3300002: Right_Gate_V001_GEO
-    4300000: Right_Gate_V001_GEO
-    4300002: Left_Gate_V001_GEO
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: polySurface8
     9500000: //RootNode
   materials:
     importMaterials: 1
