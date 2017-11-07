@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 1f6582c529410bb4eb9effa32c91418c
+timeCreated: 1510029301
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Beta_Ranged_Robot_GEO
+    100002: Ranged_Robot_Chest_CNT
+    100004: Ranged_Robot_Chest_JNT
+    100006: //RootNode
+    100008: Ranged_Robot_Hand_CNT
+    100010: Ranged_Robot_Hand_END
+    100012: Ranged_Robot_Head_CNT
+    100014: Ranged_Robot_Head_END
+    100016: Ranged_Robot_Hip_CNT
+    100018: Ranged_Robot_Hip_JNT
+    100020: Ranged_Robot_Left_Ankle_CNT
+    100022: Ranged_Robot_Left_Ankle_JNT
+    100024: Ranged_Robot_Left_Foot_
+    100026: Ranged_Robot_Left_Foot_END
+    100028: Ranged_Robot_Left_Foot_JNT
+    100030: Ranged_Robot_Left_Knee_CNT
+    100032: Ranged_Robot_Left_Knee_JNT
+    100034: Ranged_Robot_Left_Leg_CNT
+    100036: Ranged_Robot_Left_Leg_JNT
+    100038: Ranged_Robot_Neck_CNT
+    100040: Ranged_Robot_Neck_JNT
+    100042: Ranged_Robot_Pelvis_CNT
+    100044: Ranged_Robot_Pelvis_JNT
+    100046: Ranged_Robot_Right_Ankle_CNT
+    100048: Ranged_Robot_Right_Ankle_JNT
+    100050: Ranged_Robot_Right_Foot_CNT
+    100052: Ranged_Robot_Right_Foot_END
+    100054: Ranged_Robot_Right_Foot_JNT
+    100056: Ranged_Robot_Right_Knee_CNT
+    100058: Ranged_Robot_Right_Knee_JNT
+    100060: Ranged_Robot_Right_Leg_CNT
+    100062: Ranged_Robot_Right_Leg_JNT
+    100064: Ranged_Robot_Root_CNT
+    100066: Ranged_Robot_Root_JNT
+    100068: Ranged_Robot_Shoulder_CNT
+    100070: Ranged_Robot_Shoulder_JNT
+    100072: Ranged_Robot_Wrist_CNT
+    100074: Ranged_Robot_Wrist_JNT
+    400000: Beta_Ranged_Robot_GEO
+    400002: Ranged_Robot_Chest_CNT
+    400004: Ranged_Robot_Chest_JNT
+    400006: //RootNode
+    400008: Ranged_Robot_Hand_CNT
+    400010: Ranged_Robot_Hand_END
+    400012: Ranged_Robot_Head_CNT
+    400014: Ranged_Robot_Head_END
+    400016: Ranged_Robot_Hip_CNT
+    400018: Ranged_Robot_Hip_JNT
+    400020: Ranged_Robot_Left_Ankle_CNT
+    400022: Ranged_Robot_Left_Ankle_JNT
+    400024: Ranged_Robot_Left_Foot_
+    400026: Ranged_Robot_Left_Foot_END
+    400028: Ranged_Robot_Left_Foot_JNT
+    400030: Ranged_Robot_Left_Knee_CNT
+    400032: Ranged_Robot_Left_Knee_JNT
+    400034: Ranged_Robot_Left_Leg_CNT
+    400036: Ranged_Robot_Left_Leg_JNT
+    400038: Ranged_Robot_Neck_CNT
+    400040: Ranged_Robot_Neck_JNT
+    400042: Ranged_Robot_Pelvis_CNT
+    400044: Ranged_Robot_Pelvis_JNT
+    400046: Ranged_Robot_Right_Ankle_CNT
+    400048: Ranged_Robot_Right_Ankle_JNT
+    400050: Ranged_Robot_Right_Foot_CNT
+    400052: Ranged_Robot_Right_Foot_END
+    400054: Ranged_Robot_Right_Foot_JNT
+    400056: Ranged_Robot_Right_Knee_CNT
+    400058: Ranged_Robot_Right_Knee_JNT
+    400060: Ranged_Robot_Right_Leg_CNT
+    400062: Ranged_Robot_Right_Leg_JNT
+    400064: Ranged_Robot_Root_CNT
+    400066: Ranged_Robot_Root_JNT
+    400068: Ranged_Robot_Shoulder_CNT
+    400070: Ranged_Robot_Shoulder_JNT
+    400072: Ranged_Robot_Wrist_CNT
+    400074: Ranged_Robot_Wrist_JNT
+    4300000: Beta_Ranged_Robot_GEO
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Beta_Ranged_Robot_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

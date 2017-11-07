@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: b3f73a92f19b5784f81f416c6ea2c1b8
+timeCreated: 1510029140
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Melee_Robot_Chest_JNT
+    100002: Melee_Robot_Chest_JNT_CNT
+    100004: Melee_Robot_Finger_01_02_JNT
+    100006: Melee_Robot_Finger_01_02_JNT 1
+    100008: Melee_Robot_Finger_01_02_JNT_CNT
+    100010: Melee_Robot_Finger_01_02_JNT_CNT 1
+    100012: Melee_Robot_Finger_01_03_END
+    100014: Melee_Robot_Finger_01_03_END_CNT
+    100016: Melee_Robot_Finger_02_01_JNT
+    100018: Melee_Robot_Finger_02_01_JNT_CNT
+    100020: Melee_Robot_Finger_02_02_JNT
+    100022: Melee_Robot_Finger_02_02_JNT_CNT
+    100024: Melee_Robot_Finger_02_03_END
+    100026: Melee_Robot_Finger_02_03_END_CNT
+    100028: Melee_Robot_GEO
+    100030: Melee_Robot_Hand_JNT
+    100032: Melee_Robot_Hand_JNT_CNT
+    100034: Melee_Robot_Head_END
+    100036: Melee_Robot_Head_END_CNT
+    100038: Melee_Robot_Hip_JNT
+    100040: Melee_Robot_Hip_JNT_CNT
+    100042: Melee_Robot_Left_Ankle_JNT
+    100044: Melee_Robot_Left_Ankle_JNT_CNT
+    100046: Melee_Robot_Left_Foot_END
+    100048: Melee_Robot_Left_Foot_END_CNT
+    100050: Melee_Robot_Left_Foot_JNT
+    100052: Melee_Robot_Left_Foot_JNT_CNT
+    100054: Melee_Robot_Left_Leg_JNT
+    100056: Melee_Robot_Left_Leg_JNT 1
+    100058: Melee_Robot_Left_Leg_JNT_CNT
+    100060: Melee_Robot_Left_Leg_JNT_CNT 1
+    100062: Melee_Robot_Neck_JNT
+    100064: Melee_Robot_Neck_JNT_CNT
+    100066: Melee_Robot_Pelvis_JNT
+    100068: Melee_Robot_Pelvis_JNT_CNT
+    100070: Melee_Robot_Right_Ankle_JNT
+    100072: Melee_Robot_Right_Ankle_JNT_CNT
+    100074: Melee_Robot_Right_Foot_END
+    100076: Melee_Robot_Right_Foot_JNT
+    100078: Melee_Robot_Right_Foot_JNT_CNT
+    100080: Melee_Robot_Right_Foot_JNT_CNT 1
+    100082: Melee_Robot_Right_Knee_JNT
+    100084: Melee_Robot_Right_Knee_JNT_CNT
+    100086: Melee_Robot_Right_Leg_JNT
+    100088: Melee_Robot_Right_Leg_JNT_CNT
+    100090: Melee_Robot_Root_JNT
+    100092: Melee_Robot_Root_JNT_CNT
+    100094: Melee_Robot_Shoulder_JNT
+    100096: Melee_Robot_Shoulder_JNT_CNT
+    100098: Melee_Robot_Wrist_JNT
+    100100: Melee_Robot_Wrist_JNT_CNT
+    100102: //RootNode
+    400000: Melee_Robot_Chest_JNT
+    400002: Melee_Robot_Chest_JNT_CNT
+    400004: Melee_Robot_Finger_01_02_JNT
+    400006: Melee_Robot_Finger_01_02_JNT 1
+    400008: Melee_Robot_Finger_01_02_JNT_CNT
+    400010: Melee_Robot_Finger_01_02_JNT_CNT 1
+    400012: Melee_Robot_Finger_01_03_END
+    400014: Melee_Robot_Finger_01_03_END_CNT
+    400016: Melee_Robot_Finger_02_01_JNT
+    400018: Melee_Robot_Finger_02_01_JNT_CNT
+    400020: Melee_Robot_Finger_02_02_JNT
+    400022: Melee_Robot_Finger_02_02_JNT_CNT
+    400024: Melee_Robot_Finger_02_03_END
+    400026: Melee_Robot_Finger_02_03_END_CNT
+    400028: Melee_Robot_GEO
+    400030: Melee_Robot_Hand_JNT
+    400032: Melee_Robot_Hand_JNT_CNT
+    400034: Melee_Robot_Head_END
+    400036: Melee_Robot_Head_END_CNT
+    400038: Melee_Robot_Hip_JNT
+    400040: Melee_Robot_Hip_JNT_CNT
+    400042: Melee_Robot_Left_Ankle_JNT
+    400044: Melee_Robot_Left_Ankle_JNT_CNT
+    400046: Melee_Robot_Left_Foot_END
+    400048: Melee_Robot_Left_Foot_END_CNT
+    400050: Melee_Robot_Left_Foot_JNT
+    400052: Melee_Robot_Left_Foot_JNT_CNT
+    400054: Melee_Robot_Left_Leg_JNT
+    400056: Melee_Robot_Left_Leg_JNT 1
+    400058: Melee_Robot_Left_Leg_JNT_CNT
+    400060: Melee_Robot_Left_Leg_JNT_CNT 1
+    400062: Melee_Robot_Neck_JNT
+    400064: Melee_Robot_Neck_JNT_CNT
+    400066: Melee_Robot_Pelvis_JNT
+    400068: Melee_Robot_Pelvis_JNT_CNT
+    400070: Melee_Robot_Right_Ankle_JNT
+    400072: Melee_Robot_Right_Ankle_JNT_CNT
+    400074: Melee_Robot_Right_Foot_END
+    400076: Melee_Robot_Right_Foot_JNT
+    400078: Melee_Robot_Right_Foot_JNT_CNT
+    400080: Melee_Robot_Right_Foot_JNT_CNT 1
+    400082: Melee_Robot_Right_Knee_JNT
+    400084: Melee_Robot_Right_Knee_JNT_CNT
+    400086: Melee_Robot_Right_Leg_JNT
+    400088: Melee_Robot_Right_Leg_JNT_CNT
+    400090: Melee_Robot_Root_JNT
+    400092: Melee_Robot_Root_JNT_CNT
+    400094: Melee_Robot_Shoulder_JNT
+    400096: Melee_Robot_Shoulder_JNT_CNT
+    400098: Melee_Robot_Wrist_JNT
+    400100: Melee_Robot_Wrist_JNT_CNT
+    400102: //RootNode
+    4300000: Melee_Robot_GEO
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Melee_Robot_GEO
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
