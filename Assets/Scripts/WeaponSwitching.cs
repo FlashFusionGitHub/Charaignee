@@ -17,10 +17,10 @@ public class WeaponSwitching : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (selected_weapon > 2)
+        if (selected_weapon > 1)
             selected_weapon = 0;
         if (selected_weapon < 0)
-            selected_weapon = 2;
+            selected_weapon = 1;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
             selected_weapon++;
