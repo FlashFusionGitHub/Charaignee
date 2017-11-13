@@ -19,6 +19,8 @@ public class Agent : MonoBehaviour{
     private AIBehaviour aibehaviour2;
     private AIBehaviour aibehaviour3;
 
+    public Animator melee_animator;
+
     // Use this for initialization
     void Start() {
         aibehaviour = patrol;
@@ -30,13 +32,26 @@ public class Agent : MonoBehaviour{
     void Update()
     {
         if (player_within_pursue_range.Execute(agent) == AIBehaviour.BehaviourResult.Success)
+        {
             aibehaviour2.Execute(agent);
+            melee_animator.SetInteger("Speed", 1);
+        }
         else
+        {
             aibehaviour.Execute(agent);
+            melee_animator.SetInteger("Speed", -1);
+        }
+
 
         if (player_within_attack_range.Execute(agent) == AIBehaviour.BehaviourResult.Success)
+        {
             aibehaviour3.Execute(agent);
-
+            melee_animator.SetBool("isAttacking", true);
+        }
+        else
+        {
+            melee_animator.SetBool("isAttacking", false);
+        }
        // if (agent_dead.Execute(agent) == AIBehaviour.BehaviourResult.Success)
        //     aibehaviour4.Execute(agent);
 
