@@ -10,8 +10,10 @@ public class PurseAction : AIBehaviour
 
     private FirstPersonController player;
 
-	// Use this for initialization
-	void Start () {
+    public float speed = 5.0f;
+
+    // Use this for initialization
+    void Start () {
         player = FindObjectOfType<FirstPersonController>();
     }
 
@@ -19,6 +21,7 @@ public class PurseAction : AIBehaviour
     {
         if(player_within_pursue_range.Execute(agent) == BehaviourResult.Success)
         {
+            agent.speed = speed;
             agent.destination = player.transform.position;
         }
 

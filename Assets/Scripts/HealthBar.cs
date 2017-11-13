@@ -30,20 +30,6 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider hit)
-    {
-        enemyAttackTimer -= Time.deltaTime;
-
-        if (hit.tag == "Enemy")
-        {
-            if (enemyAttackTimer <= 0)
-            {
-                TakeDamge(10);
-                enemyAttackTimer = enemyAttackTime;
-            }
-        }
-    }
-
     void UpdateHealthBar()
     {
         float ratio = health / max_health;
@@ -52,11 +38,11 @@ public class HealthBar : MonoBehaviour
         ratioText.text = (ratio * 100).ToString() + '%';
     }
 
-    private void TakeDamge(float damage)
+    public void TakeDamge(float damage)
     {
         health -= damage;
 
-        if (health < 0)
+        if (health <= 0)
         {
             player.transform.position = new Vector3(0, 1.5f, 0);
             health = max_health;

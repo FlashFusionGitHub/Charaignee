@@ -12,6 +12,7 @@ public class PatrolAction : AIBehaviour
     public float patrol_point_timer = 0;
     public int patrol_point_time;
     public PlayerWithinPurseRange player_within_pursue_range;
+    public float speed = 5.0f;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,8 @@ public class PatrolAction : AIBehaviour
         if(player_within_pursue_range.Execute(agent) == BehaviourResult.Failure)
         {
             patrol_point_timer -= Time.deltaTime;
+
+            agent.speed = speed;
 
             if (patrol_point_timer <= 0)
             {
