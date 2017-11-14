@@ -24,9 +24,11 @@ public class HealthBar : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if(hit.tag == "Health")
+        //added if health less than max health condition and disables gameobject on use - brodie
+        if(hit.tag == "Health" && health < max_health)
         {
             HealDamage(20);
+            hit.gameObject.SetActive(false);
         }
     }
 
