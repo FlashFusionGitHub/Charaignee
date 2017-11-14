@@ -2,21 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InControl;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class WeaponSwitching : MonoBehaviour {
 
     public int selected_weapon = 0;
     private InputDevice gamePad;
+    private FirstPersonController player;
+    private bool haveMeleeWeapon;
+    private bool haveRevoler;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject revolver;
+    public GameObject MeleeWeapon;
+
+    // Use this for initialization
+    void Start () {
         SelectWeapon();
         gamePad = InputManager.ActiveDevice;
-	}
+        haveRevoler = false;
+        haveMeleeWeapon = false;
+        revolver.SetActive(false);
+        MeleeWeapon.SetActive(false);
+    }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         if (selected_weapon > 1)
             selected_weapon = 0;
         if (selected_weapon < 0)
@@ -42,14 +53,28 @@ public class WeaponSwitching : MonoBehaviour {
     {
         int i = 0;
 
-        foreach(Transform weapon in transform)
-        { 
-            if(i == selected_weapon)
-                weapon.gameObject.SetActive(true);
-            else
-                weapon.gameObject.SetActive(false);
+        foreach (Transform weapon in transform)
+        {
+            if (haveRevoler == true && haveMeleeWeapon == true)
+            {
+                if (i == selected_weapon)
+                    weapon.gameObject.SetActive(true);
+                else
+                    weapon.gameObject.SetActive(false);
+                i++;
+            }
+        }     
+    }
 
-            i++;
-        }
+    public void setRevolverState(bool value)
+    {
+        revolver.SetActive(value);
+        haveRevoler = value;
+    }
+
+    public void setMeleeWeaponState(bool value)
+    {
+        MeleeWeapon.SetActive(value);
+        haveMeleeWeapon = value;
     }
 }

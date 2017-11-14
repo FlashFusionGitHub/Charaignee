@@ -17,12 +17,15 @@ public class ItemPickUp : MonoBehaviour
     private int numberOfKeys = 1;
     private int maxAmmo = 30;
     private InputDevice gamePad;
+    private WeaponSwitching weapon_switching;
 
     public bool canFire;
     bool Destroyed;
 
     void Start()
     {
+        weapon_switching = FindObjectOfType<WeaponSwitching>();
+
         gamePad = InputManager.ActiveDevice;
         AmmoText.text = "Ammo: " + ammoCount;
         AmmoInGunText.text = "0";
@@ -89,6 +92,18 @@ public class ItemPickUp : MonoBehaviour
             }
             else
                 return;
+        }
+
+        if (hit.tag == "Revolver")
+        {
+            Destroy(hit.gameObject);
+            weapon_switching.setRevolverState(true);
+        }
+
+        if (hit.tag == "MeleeWeapon")
+        {
+            Destroy(hit.gameObject);
+            weapon_switching.setMeleeWeaponState(true);
         }
     }
 

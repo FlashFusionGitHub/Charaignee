@@ -9,6 +9,8 @@ TagManager:
   - Ammo
   - Key
   - Health
+  - MeleeWeapon
+  - Revolver
   layers:
   - Default
   - TransparentFX
