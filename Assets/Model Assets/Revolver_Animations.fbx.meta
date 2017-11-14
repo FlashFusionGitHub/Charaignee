@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f11b1068db9680544b028a56ac97a915
-timeCreated: 1510032362
+guid: 6d26b0e1ede76124b97ed2ac7e3eb514
+timeCreated: 1510617205
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -11,36 +11,22 @@ ModelImporter:
     100006: Cylinder_JNT
     100008: Global_END
     100010: Global_Handle
-    100012: polySurface158
-    100014: polySurface159
-    100016: polySurface160
-    100018: polySurface161
-    100020: polySurface161 1
-    100022: //RootNode
-    100024: Revolver_GEO2
-    100026: Root_JNT
-    100028: transform1
-    100030: transform2
-    100032: transform3
+    100012: Revolver
+    100014: //RootNode
+    100016: Root_JNT
     400000: Cog_Control
     400002: Cog_JNT
     400004: Cylinder_Control
     400006: Cylinder_JNT
     400008: Global_END
     400010: Global_Handle
-    400012: polySurface158
-    400014: polySurface159
-    400016: polySurface160
-    400018: polySurface161
-    400020: polySurface161 1
-    400022: //RootNode
-    400024: Revolver_GEO2
-    400026: Root_JNT
-    400028: transform1
-    400030: transform2
-    400032: transform3
+    400012: Revolver
+    400014: //RootNode
+    400016: Root_JNT
+    4300000: Revolver
     7400000: Take 001
     9500000: //RootNode
+    13700000: Revolver
   materials:
     importMaterials: 1
     materialName: 0
