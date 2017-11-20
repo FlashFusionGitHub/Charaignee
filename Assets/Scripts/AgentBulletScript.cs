@@ -14,15 +14,10 @@ public class AgentBulletScript : MonoBehaviour {
         projectile = GetComponent<GameObject>();
         player_health = FindObjectOfType<HealthBar>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    void OnCollisionEnter(Collision hit)
+    void OnTriggerEnter(Collider hit)
     {
-        if (hit.collider.tag == "Player")
+        if (hit.tag == "Player")
         {
             player_health.TakeDamge(damage);
             Destroy(gameObject);

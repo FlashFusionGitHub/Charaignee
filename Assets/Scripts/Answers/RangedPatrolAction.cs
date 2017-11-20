@@ -9,7 +9,7 @@ public class RangedPatrolAction : AIBehaviour
 
     private int waypoint_number = 0;
 
-    private Waypoint waypoints;
+    public Waypoint waypoints;
     public float patrol_point_timer = 0;
     public int patrol_point_time;
     public float speed = 10.0f;
@@ -18,7 +18,6 @@ public class RangedPatrolAction : AIBehaviour
 
     // Use this for initialization
     void Start () {
-        waypoints = FindObjectOfType<Waypoint>();
         patrol_point_time = Random.Range(1, 5);
     }
 
@@ -32,7 +31,7 @@ public class RangedPatrolAction : AIBehaviour
 
             if (patrol_point_timer <= 0)
             {
-                waypoint_number = Random.Range(1, 90);
+                waypoint_number = Random.Range(1, 35);
                 patrol_point_timer = patrol_point_time;
             }
 
