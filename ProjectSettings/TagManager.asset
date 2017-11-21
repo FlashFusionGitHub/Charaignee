@@ -12,6 +12,7 @@ TagManager:
   - MeleeWeapon
   - Revolver
   - Wall
+  - Door
   layers:
   - Default
   - TransparentFX
