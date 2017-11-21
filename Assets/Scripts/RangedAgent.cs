@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class RangedAgent : MonoBehaviour {
 
     public NavMeshAgent agent;
 
+    public Animator rangeEnemyAnimator;
     public float health = 100;
 
     public RangedPatrolAction patrol;
@@ -39,13 +41,25 @@ public class RangedAgent : MonoBehaviour {
     void Update()
     {
         if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Failure)
+        {
             aibehaviour.Execute(agent);
+            rangeEnemyAnimator.SetBool("isWalking", true);
+            rangeEnemyAnimator.SetBool("isShooting", false);
+        }
+
 
         if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Success)
+        {
             aibehaviour2.Execute(agent);
+            rangeEnemyAnimator.SetBool("isWalking", false);
+        }
 
         if (attackRange2.Execute(agent) == AIBehaviour.BehaviourResult.Success)
+        {
             aibehaviour3.Execute(agent);
+            rangeEnemyAnimator.SetBool("isShooting", true);
+        }
+
 
         if (health <= 0)
         {

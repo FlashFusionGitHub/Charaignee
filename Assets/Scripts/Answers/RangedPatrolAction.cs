@@ -18,7 +18,8 @@ public class RangedPatrolAction : AIBehaviour
 
     // Use this for initialization
     void Start () {
-        patrol_point_time = Random.Range(1, 5);
+        waypoints = FindObjectOfType<Waypoint>();
+        patrol_point_time = Random.Range(2, 5);
     }
 
     public override BehaviourResult Execute(NavMeshAgent agent)
@@ -34,7 +35,6 @@ public class RangedPatrolAction : AIBehaviour
                 waypoint_number = Random.Range(1, 35);
                 patrol_point_timer = patrol_point_time;
             }
-
             agent.destination = waypoints.way_points_list[waypoint_number].transform.position;
         }
 

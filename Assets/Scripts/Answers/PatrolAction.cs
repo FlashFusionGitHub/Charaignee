@@ -17,7 +17,7 @@ public class PatrolAction : AIBehaviour
     // Use this for initialization
     void Start () {
         waypoints = FindObjectOfType<Waypoint>();
-        patrol_point_time = Random.Range(1, 5);
+        patrol_point_time = Random.Range(2, 3);
     }
 
     public override BehaviourResult Execute(NavMeshAgent agent)

@@ -52,8 +52,7 @@ public class Agent : MonoBehaviour{
         {
             melee_animator.SetBool("isAttacking", false);
         }
-       // if (agent_dead.Execute(agent) == AIBehaviour.BehaviourResult.Success)
-       //     aibehaviour4.Execute(agent);
+    
 
         if(health <= 0)
         {

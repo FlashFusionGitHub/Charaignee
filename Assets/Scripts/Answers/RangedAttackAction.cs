@@ -14,7 +14,7 @@ public class RangedAttackAction : AIBehaviour {
     public PlayerWithinRangedAttackRange player_within_ranged_attack_range;
 
     public float projectile_speed = 50.0f;
-    public float shot_time = 2.0f;
+    public float shot_time = 1.0f;
 
     private float shot_timer = 0.0f;
 

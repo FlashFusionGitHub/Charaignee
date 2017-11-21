@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1f6582c529410bb4eb9effa32c91418c
-timeCreated: 1510029301
+guid: a5d2b08dc3bb2584b97f98bbfb35c880
+timeCreated: 1511223090
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -82,9 +82,8 @@ ModelImporter:
     400072: Ranged_Robot_Wrist_CNT
     400074: Ranged_Robot_Wrist_JNT
     4300000: Beta_Ranged_Robot_GEO
-    7400000: Take 001
-    7400002: RangedPatrol
-    7400004: RangedAttack
+    7400000: Walk
+    7400002: Shoot
     9500000: //RootNode
     13700000: Beta_Ranged_Robot_GEO
   materials:
@@ -112,10 +111,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RangedPatrol
+      name: Walk
       takeName: Take 001
-      firstFrame: 108
-      lastFrame: 270
+      firstFrame: 116
+      lastFrame: 310
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -140,10 +139,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RangedAttack
+      name: Shoot
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 110
+      lastFrame: 105
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
