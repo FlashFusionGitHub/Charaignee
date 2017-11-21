@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using InControl;
 
-public class ItemPickUp : MonoBehaviour {
+public class ItemPickUp : MonoBehaviour
+{
     public Text KeysCollectedText;
     public Text AmmoText;
     public Text PickUpText;
@@ -11,15 +14,16 @@ public class ItemPickUp : MonoBehaviour {
     private int ammoCount;
     private int ammoInGun;
     private int numberOfBulletsUsed;
+    private int numberOfKeys = 1;
     private int maxAmmo = 30;
-    private int numberOfKeys = 0;
     private InputDevice gamePad;
     private WeaponSwitching weapon_switching;
 
     public bool canFire;
     bool Destroyed;
 
-    void Start() {
+    void Start()
+    {
         weapon_switching = FindObjectOfType<WeaponSwitching>();
 
         gamePad = InputManager.ActiveDevice;
@@ -31,48 +35,40 @@ public class ItemPickUp : MonoBehaviour {
         Destroyed = false;
     }
 
-    void Update() {
+    void Update()
+    {
+        if (Destroyed == true)
+        {
+            numberOfKeys += 1;
+            Destroyed = false;
+        }
+
         if (ammoInGun > 0)
             canFire = true;
         else
             canFire = false;
     }
 
-    void OnTriggerStay(Collider hit) {
-        if (hit.tag == "Key") {
+
+    void OnTriggerStay(Collider hit)
+    {
+        if (hit.tag == "Key")
+        {
             PickUpText.text = "Press 'E' to collect key";
-            if (Input.GetKeyDown(KeyCode.E)) {
+            if (Input.GetKey(KeyCode.E))
+            {
                 Destroy(hit.gameObject);
-                numberOfKeys += 1;
+                Destroyed = true;
                 KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
                 PickUpText.text = "";
             }
 
 #if UNITY_PS4
             PickUpText.text = "Press 'Circle' to collect key";
-            if (gamePad.Action2) {
-                Destroy(hit.gameObject);
-                Destroyed = true;
-                KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
-                PickUpText.text = "";
-            }
-#endif
-        }
-        if (hit.tag == "Door" && numberOfKeys > 0) {
-            PickUpText.text = "Press 'E' to open door";
-            if (Input.GetKey(KeyCode.E))
+            if (gamePad.Action2)
             {
-                numberOfKeys--;
-                KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
-                PickUpText.text = "";
-                Destroy(hit.gameObject);
-            }
-#if UNITY_PS4
-            PickUpText.text = "Press 'Circle' to open door";
-            if (gamePad.Action2) {
                 Destroy(hit.gameObject);
                 Destroyed = true;
-                numberOfKeys = numberOfKeys - 1;
                 KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
                 PickUpText.text = "";
             }
@@ -111,20 +107,25 @@ public class ItemPickUp : MonoBehaviour {
         }
     }
 
-    void OnTriggerExit(Collider hit) {
+    void OnTriggerExit(Collider hit)
+    {
         PickUpText.text = "";
     }
 
-    public void Shoot() {
-        if (ammoInGun > 0) {
+    public void Shoot()
+    {
+        if (ammoInGun > 0)
+        {
             ammoInGun--;
             numberOfBulletsUsed++;
             UpdateAmmoStatusText();
         }
     }
 
-    public void reloadGun() {
-        if(ammoCount > 0 && ammoInGun < 6) {
+    public void reloadGun()
+    {
+        if(ammoCount > 0 && ammoInGun < 6)
+        {
             if (ammoCount <= numberOfBulletsUsed)
                 ammoInGun += ammoCount;
             else
@@ -144,7 +145,8 @@ public class ItemPickUp : MonoBehaviour {
         }
     }
 
-    void UpdateAmmoStatusText() {
+    void UpdateAmmoStatusText()
+    {
         AmmoText.text = "Ammo: " + ammoCount.ToString();
         AmmoInGunText.text = ammoInGun.ToString();
     }
