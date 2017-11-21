@@ -84,6 +84,12 @@ public class RevolverActor : MonoBehaviour {
 
                 hit.transform.gameObject.GetComponent<Agent>().agentTakeDamage(damage);
             }
+            else if (hit.transform.tag == "Boss")
+            {
+                impact_object = Instantiate(enemy_impact_effect, hit.point, Quaternion.LookRotation(hit.normal));
+
+                hit.transform.gameObject.GetComponent<BossActor>().BossTakeDamage(damage);
+            }
             else if (hit.transform.tag == "Wall")
             {
                 impact_object = Instantiate(impact_effect, hit.point, Quaternion.LookRotation(hit.normal));
