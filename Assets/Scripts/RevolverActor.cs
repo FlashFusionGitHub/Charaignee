@@ -45,7 +45,9 @@ public class RevolverActor : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            item.canFire = false;
             item.reloadGun();
+            GetComponent<Animator>().Play("Reload", 0);
         }
 
 #if UNITY_PS4
@@ -59,7 +61,9 @@ public class RevolverActor : MonoBehaviour {
 
         if (gamePad.Action3.WasPressed)
         {
+            item.canFire = false;
             item.reloadGun();
+            GetComponent<Animator>().Play("Reload", 0);
         }
 #endif
     }
@@ -67,6 +71,8 @@ public class RevolverActor : MonoBehaviour {
 
     void Shoot()
     {
+        GetComponent<Animator>().Play("Shoot",0);
+
         RaycastHit hit;
         GameObject impact_object;
 
