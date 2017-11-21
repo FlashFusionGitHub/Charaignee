@@ -11,6 +11,8 @@ TagManager:
   - Health
   - MeleeWeapon
   - Revolver
+  - RangedEnemy
+  - Door
   layers:
   - Default
   - TransparentFX
