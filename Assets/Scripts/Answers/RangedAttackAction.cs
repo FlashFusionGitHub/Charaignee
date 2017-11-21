@@ -7,8 +7,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class RangedAttackAction : AIBehaviour {
 
-    public float health = 100;
-
     public GameObject projectile;
     public GameObject projectile_spawn_point;
     public PlayerWithinRangedAttackRange player_within_ranged_attack_range;

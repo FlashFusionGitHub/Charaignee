@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 114923577715816884}
   m_Layer: 0
   m_Name: Ranged_Robot_Final (5)
-  m_TagString: Untagged
+  m_TagString: RangedEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,8 +1100,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232943979988830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -94.5159, y: 0.10000002, z: 38.38908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 160.36264, y: 1.2677066, z: 93.78937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4895120572339874}
@@ -1193,7 +1193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55966cc08dc2e514eae8a3abdc71a27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
   projectile: {fileID: 1876396530138904, guid: 52f9ca2e614cbc8418bdba91eb73a0dd, type: 2}
   projectile_spawn_point: {fileID: 1450010815415888}
   player_within_ranged_attack_range: {fileID: 114390300069476646}
@@ -1253,7 +1252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 195717597292532972}
   rangeEnemyAnimator: {fileID: 95092620372944440}
-  health: 100
+  health: 150
   patrol: {fileID: 114322014755887960}
   purse: {fileID: 114675444682239002}
   attack: {fileID: 114167359611577980}

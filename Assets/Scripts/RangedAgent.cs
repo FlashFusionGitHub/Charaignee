@@ -70,5 +70,7 @@ public class RangedAgent : MonoBehaviour {
     public void agentTakeDamage(float playerAttack)
     {
         health -= playerAttack;
+
+        Debug.Log(health);
     }
 }

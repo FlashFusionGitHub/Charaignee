@@ -82,7 +82,8 @@ public class Attack : MonoBehaviour {
         {
             if (hit.transform.tag == "Enemy")
                 hit.transform.gameObject.GetComponent<Agent>().agentTakeDamage(damage);
-            }
+            if (hit.transform.tag == "RangedEnemy")
+                hit.transform.gameObject.GetComponent<RangedAgent>().agentTakeDamage(damage);
         }
-
+    }
 }
