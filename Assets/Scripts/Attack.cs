@@ -16,6 +16,8 @@ public class Attack : MonoBehaviour {
     private float yRotation;
     private float zRotation;
 
+    private AudioSource audioSource;
+
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (attacking)
@@ -38,6 +40,7 @@ public class Attack : MonoBehaviour {
         xRotation = transform.rotation.x;
         yRotation = transform.rotation.y;
         zRotation = transform.rotation.z;
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -45,6 +48,7 @@ public class Attack : MonoBehaviour {
         //if left mouse button is pressed and not currently attacking, state is set to attacking
 		if (Input.GetButtonDown("Fire1") && !attacking)
         {
+            audioSource.Play();
             attacking = true;
             HitEnemy();
             Debug.Log("Attacking");

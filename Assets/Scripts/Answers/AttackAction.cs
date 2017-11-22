@@ -13,6 +13,8 @@ public class AttackAction : AIBehaviour
     public PlayerWithinAttackRange player_within_attack_range;
     private HealthBar playerHealth;
 
+    public AudioSource audioSourceAttack;
+
     void Start()
     {
         playerHealth = FindObjectOfType<HealthBar>();
@@ -28,6 +30,7 @@ public class AttackAction : AIBehaviour
 
             if (AttackTimer <= 0)
             {
+                audioSourceAttack.Play();
                 playerHealth.TakeDamge(damageToApply);
                 AttackTimer = AttackTime;
             }

@@ -16,6 +16,8 @@ public class HealthBar : MonoBehaviour
     private float enemyAttackTime = 5;
     private FirstPersonController player;
 
+    public AudioSource audioSourceHealth;
+
 
     void Start()
     {
@@ -28,7 +30,9 @@ public class HealthBar : MonoBehaviour
         if(hit.tag == "Health" && health < max_health)
         {
             HealDamage(20);
+            audioSourceHealth.Play();
             hit.gameObject.SetActive(false);
+
         }
     }
 

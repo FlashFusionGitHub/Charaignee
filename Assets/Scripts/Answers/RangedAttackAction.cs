@@ -18,6 +18,8 @@ public class RangedAttackAction : AIBehaviour {
 
     private FirstPersonController player;
 
+    public AudioSource audioSourceAttack;
+
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<FirstPersonController>();
@@ -44,6 +46,8 @@ public class RangedAttackAction : AIBehaviour {
     void Shoot()
     {
         GameObject theProjectile = Instantiate(projectile);
+
+        audioSourceAttack.Play();
 
         theProjectile.transform.position = projectile_spawn_point.transform.position;
 

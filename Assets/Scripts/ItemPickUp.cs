@@ -7,6 +7,7 @@ public class ItemPickUp : MonoBehaviour {
     public Text AmmoText;
     public Text PickUpText;
     public Text AmmoInGunText;
+    public AudioSource audioSourceAmmo;
 
     private int ammoCount;
     private int ammoInGun;
@@ -65,7 +66,7 @@ public class ItemPickUp : MonoBehaviour {
                 numberOfKeys--;
                 KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
                 PickUpText.text = "";
-                Destroy(hit.gameObject);
+                hit.gameObject.SetActive(false);
             }
 #if UNITY_PS4
             PickUpText.text = "Press 'Circle' to open door";
@@ -92,6 +93,7 @@ public class ItemPickUp : MonoBehaviour {
                     ammoCount = maxAmmo;
 
                 AmmoText.text = "Ammo: " + ammoCount;
+                audioSourceAmmo.Play();
                 Destroy(hit.gameObject);
             }
             else

@@ -23,12 +23,15 @@ public class RevolverActor : MonoBehaviour {
 
     public Agent agent;
 
+    private AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
         item = FindObjectOfType<ItemPickUp>();
         agent = FindObjectOfType<Agent>();
         gamePad = InputManager.ActiveDevice;
-	}
+        audioSource = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,6 +43,7 @@ public class RevolverActor : MonoBehaviour {
             muzzle_flash.Play();
             item.Shoot();
             Shoot();
+            audioSource.Play();
             shot_timer = shot_time;
         }
 

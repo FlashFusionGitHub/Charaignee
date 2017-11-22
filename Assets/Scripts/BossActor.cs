@@ -21,6 +21,8 @@ public class BossActor : MonoBehaviour {
 
     public float attackTime = 1.0f;
 
+    public AudioSource audioSourceRanged;
+
 
 	// Use this for initialization
 	void Start () {
@@ -62,6 +64,8 @@ public class BossActor : MonoBehaviour {
     {
         GameObject theProjectile = Instantiate(bullet);
 
+        audioSourceRanged.Play();
+
         theProjectile.transform.position = bulletSpawnPoint_1.transform.position;
 
         Rigidbody rb = theProjectile.GetComponent<Rigidbody>();
@@ -78,6 +82,8 @@ public class BossActor : MonoBehaviour {
     void ShootMissile()
     {
         GameObject theProjectile = Instantiate(missile);
+
+        audioSourceRanged.Play();
 
         theProjectile.transform.position = bulletSpawnPoint_2.transform.position;
 
