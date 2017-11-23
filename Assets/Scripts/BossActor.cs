@@ -10,6 +10,8 @@ public class BossActor : MonoBehaviour {
     public GameObject missile;
     public GameObject bullet;
 
+    public GameObject key;
+
     public float bullet_speed = 1.0f;
 
     public float BossHealth = 100.0f;
@@ -50,7 +52,11 @@ public class BossActor : MonoBehaviour {
             ShootMissile();
 
         if (BossHealth <= 0)
-            SceneManager.LoadScene(3);
+        {
+            Instantiate(key, this.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+           // SceneManager.LoadScene(3);
+        }
 	}
 
     public void BossTakeDamage(float damage) {
