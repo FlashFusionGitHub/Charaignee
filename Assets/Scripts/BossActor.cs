@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class BossActor : MonoBehaviour {
 
@@ -51,7 +52,8 @@ public class BossActor : MonoBehaviour {
         if (Vector3.Distance(player.transform.position, this.transform.position) < 40.0f && attackTimer <= 0.0f)
             ShootMissile();
 
-        if(BossHealth <= 0)
+        if (BossHealth <= 0)
+            SceneManager.LoadScene(3);
             Destroy(gameObject);
 	}
 

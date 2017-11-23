@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -30,7 +29,6 @@ public class HealthBar : MonoBehaviour
         if(hit.tag == "Health" && health < max_health)
         {
             HealDamage(20);
-            audioSourceHealth.Play();
             hit.gameObject.SetActive(false);
 
         }
@@ -52,6 +50,7 @@ public class HealthBar : MonoBehaviour
         {
             player.transform.position = new Vector3(0, 1.5f, 0);
             health = max_health;
+            SceneManager.LoadScene(2);
         }
 
         UpdateHealthBar();
@@ -59,6 +58,7 @@ public class HealthBar : MonoBehaviour
 
     private void HealDamage(float heal)
     {
+        audioSourceHealth.Play();
         health += heal;
 
         if (health > 100)
