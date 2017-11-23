@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 
@@ -41,8 +39,7 @@ public class BossActor : MonoBehaviour {
         if (Vector3.Distance(player.transform.position, this.transform.position) < 20.0f && attackTimer <= 0.0f)
             shootBullet();
 
-        if (Vector3.Distance(player.transform.position, this.transform.position) < 30.0f)
-        {
+        if (Vector3.Distance(player.transform.position, this.transform.position) < 30.0f) {
             Quaternion rotation = Quaternion.LookRotation(Direction);
 
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime * 50.0f);
@@ -54,16 +51,13 @@ public class BossActor : MonoBehaviour {
 
         if (BossHealth <= 0)
             SceneManager.LoadScene(3);
-            Destroy(gameObject);
 	}
 
-    public void BossTakeDamage(float damage)
-    {
+    public void BossTakeDamage(float damage) {
         BossHealth -= damage;
     }
 
-    void shootBullet()
-    {
+    void shootBullet() {
         GameObject theProjectile = Instantiate(bullet);
 
         audioSourceRanged.Play();

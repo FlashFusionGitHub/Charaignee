@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,18 +18,13 @@ public class Buttons : MonoBehaviour {
         btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 	}
-	
-	// Update is called once per frame
-	//void Update () {
-	//}
 
     void TaskOnClick() {
-        if (play) {
+        if (play)
             SceneManager.LoadScene(1);
-        } else if (exit) {
+        else if (exit)
             Application.Quit();
-        } else if (mainMenu) {
+        else if (mainMenu)
             SceneManager.LoadScene(0);
-        }
     }
 }

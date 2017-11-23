@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 
-public class HealthBar : MonoBehaviour
-{
+public class HealthBar : MonoBehaviour {
     public Image currentHealthbar;
     public Text ratioText;
 
@@ -18,36 +17,30 @@ public class HealthBar : MonoBehaviour
     public AudioSource audioSourceHealth;
 
 
-    void Start()
-    {
+    void Start() {
         player = FindObjectOfType<FirstPersonController>();
     }
 
-    void OnTriggerEnter(Collider hit)
-    {
+    void OnTriggerEnter(Collider hit) {
         //added if health less than max health condition and disables gameobject on use - brodie
-        if(hit.tag == "Health" && health < max_health)
-        {
+        if(hit.tag == "Health" && health < max_health) {
             HealDamage(20);
             hit.gameObject.SetActive(false);
 
         }
     }
 
-    void UpdateHealthBar()
-    {
+    void UpdateHealthBar() {
         float ratio = health / max_health;
 
         currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratioText.text = (ratio * 100).ToString() + '%';
     }
 
-    public void TakeDamge(float damage)
-    {
+    public void TakeDamge(float damage) {
         health -= damage;
 
-        if (health <= 0)
-        {
+        if (health <= 0) {
             player.transform.position = new Vector3(0, 1.5f, 0);
             health = max_health;
             SceneManager.LoadScene(2);
@@ -56,8 +49,7 @@ public class HealthBar : MonoBehaviour
         UpdateHealthBar();
     }
 
-    private void HealDamage(float heal)
-    {
+    private void HealDamage(float heal) {
         audioSourceHealth.Play();
         health += heal;
 

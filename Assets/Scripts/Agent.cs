@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class Agent : MonoBehaviour{
@@ -31,37 +29,27 @@ public class Agent : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        if (player_within_pursue_range.Execute(agent) == AIBehaviour.BehaviourResult.Success)
-        {
+        if (player_within_pursue_range.Execute(agent) == AIBehaviour.BehaviourResult.Success) {
             aibehaviour2.Execute(agent);
             melee_animator.SetInteger("Speed", 1);
-        }
-        else
-        {
+        } else {
             aibehaviour.Execute(agent);
             melee_animator.SetInteger("Speed", -1);
         }
 
 
-        if (player_within_attack_range.Execute(agent) == AIBehaviour.BehaviourResult.Success)
-        {
+        if (player_within_attack_range.Execute(agent) == AIBehaviour.BehaviourResult.Success) {
             aibehaviour3.Execute(agent);
             melee_animator.SetBool("isAttacking", true);
-        }
-        else
-        {
+        } else
             melee_animator.SetBool("isAttacking", false);
-        }
     
 
         if(health <= 0)
-        {
             Destroy(agent.gameObject);
-        }
     }
 
-    public void agentTakeDamage(float playerAttack)
-    {
+    public void agentTakeDamage(float playerAttack) {
         health -= playerAttack;
     }
 }
