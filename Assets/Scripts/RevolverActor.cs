@@ -23,14 +23,14 @@ public class RevolverActor : MonoBehaviour {
 
     public Agent agent;
 
-    private AudioSource audioSource;
+    public AudioSource audioSourceShoot;
+    public AudioSource audioSourceReload;
 
 	// Use this for initialization
 	void Start () {
         item = FindObjectOfType<ItemPickUp>();
         agent = FindObjectOfType<Agent>();
         gamePad = InputManager.ActiveDevice;
-        audioSource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -43,7 +43,7 @@ public class RevolverActor : MonoBehaviour {
             muzzle_flash.Play();
             item.Shoot();
             Shoot();
-            audioSource.Play();
+            audioSourceShoot.Play();
             shot_timer = shot_time;
         }
 
@@ -52,6 +52,7 @@ public class RevolverActor : MonoBehaviour {
             item.canFire = false;
             item.reloadGun();
             GetComponent<Animator>().Play("Reload", 0);
+            audioSourceReload.Play();
         }
 
 #if UNITY_PS4
