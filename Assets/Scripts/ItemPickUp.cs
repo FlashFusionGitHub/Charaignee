@@ -156,4 +156,9 @@ public class ItemPickUp : MonoBehaviour {
         AmmoText.text = "Ammo: " + ammoCount.ToString();
         AmmoInGunText.text = ammoInGun.ToString();
     }
+
+    public int BulletsInGun()
+    {
+        return ammoInGun;
+    }
 }

@@ -47,7 +47,7 @@ public class RevolverActor : MonoBehaviour {
             shot_timer = shot_time;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && item.BulletsInGun() <= 5)
         {
             item.canFire = false;
             item.reloadGun();
