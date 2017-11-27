@@ -32,7 +32,7 @@ public class RangedPatrolAction : AIBehaviour
 
             if (patrol_point_timer <= 0)
             {
-                waypoint_number = Random.Range(1, 35);
+                waypoint_number = Random.Range(1, 57);
                 patrol_point_timer = patrol_point_time;
             }
             agent.destination = waypoints.way_points_list[waypoint_number].transform.position;

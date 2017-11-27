@@ -30,7 +30,7 @@ public class PatrolAction : AIBehaviour
 
             if (patrol_point_timer <= 0)
             {
-                waypoint_number = Random.Range(1, 11);
+                waypoint_number = Random.Range(1, 57);
                 patrol_point_timer = patrol_point_time;
             }
 

@@ -24,7 +24,6 @@ public class BossTrigger : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Boss Triggered");
             boss.GetComponent<BossActor>().enabled = true;
             bossDoor.SetActive(true);
             gameObject.SetActive(false);

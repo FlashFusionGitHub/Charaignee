@@ -51,7 +51,6 @@ public class Attack : MonoBehaviour {
             audioSource.Play();
             attacking = true;
             HitEnemy();
-            Debug.Log("Attacking");
         }
         //while attacking
         if (attacking)
@@ -70,7 +69,6 @@ public class Attack : MonoBehaviour {
             attacking = false;
             //timer reset
             attackTimer = 0;
-            Debug.Log("No longer attacking");
             //resets rotation
             transform.localRotation = Quaternion.identity;
             //transform.Rotate(Vector3.up * -90);
