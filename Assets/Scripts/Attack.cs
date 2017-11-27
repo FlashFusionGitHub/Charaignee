@@ -88,6 +88,10 @@ public class Attack : MonoBehaviour {
                 hit.transform.gameObject.GetComponent<Agent>().agentTakeDamage(damage);
             if (hit.transform.tag == "RangedEnemy")
                 hit.transform.gameObject.GetComponent<RangedAgent>().agentTakeDamage(damage);
+            if (hit.transform.tag == "Boss")
+                hit.transform.gameObject.GetComponent<BossActor>().BossTakeDamage(damage);
+            if (hit.transform.tag == "Wall")
+                hit.transform.gameObject.GetComponent<BossActor>().BossTakeDamage(damage);
         }
     }
 }

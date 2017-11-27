@@ -11,6 +11,7 @@ public class BossActor : MonoBehaviour {
     public GameObject bullet;
 
     public GameObject key;
+    public GameObject winTrigger;
 
     public float bullet_speed = 1.0f;
 
@@ -55,7 +56,8 @@ public class BossActor : MonoBehaviour {
         {
             Instantiate(key, this.transform.position, Quaternion.identity);
             Destroy(gameObject);
-           // SceneManager.LoadScene(3);
+            // SceneManager.LoadScene(3);
+            winTrigger.SetActive(true);
         }
 	}
 

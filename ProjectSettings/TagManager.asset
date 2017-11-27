@@ -15,6 +15,7 @@ TagManager:
   - Door
   - RangedEnemy
   - Boss
+  - Gate
   layers:
   - Default
   - TransparentFX

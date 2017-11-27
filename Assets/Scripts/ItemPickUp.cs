@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using InControl;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class ItemPickUp : MonoBehaviour {
     public Text KeysCollectedText;
@@ -8,6 +9,8 @@ public class ItemPickUp : MonoBehaviour {
     public Text PickUpText;
     public Text AmmoInGunText;
     public AudioSource audioSourceAmmo;
+
+    private FirstPersonController player;
 
     private int ammoCount;
     private int ammoInGun;
@@ -22,6 +25,8 @@ public class ItemPickUp : MonoBehaviour {
 
     void Start() {
         weapon_switching = FindObjectOfType<WeaponSwitching>();
+
+        player = FindObjectOfType<FirstPersonController>();
 
         gamePad = InputManager.ActiveDevice;
         AmmoText.text = "Ammo: " + ammoCount;
@@ -59,7 +64,8 @@ public class ItemPickUp : MonoBehaviour {
             }
 #endif
         }
-        if (hit.tag == "Door" && numberOfKeys > 0) {
+        if (hit.tag == "Door" && numberOfKeys > 0)
+        {
             PickUpText.text = "Press 'E' to open door";
             if (Input.GetKey(KeyCode.E))
             {
@@ -68,6 +74,8 @@ public class ItemPickUp : MonoBehaviour {
                 PickUpText.text = "";
                 hit.gameObject.SetActive(false);
             }
+        }
+    }
 #if UNITY_PS4
             PickUpText.text = "Press 'Circle' to open door";
             if (gamePad.Action2) {
@@ -78,8 +86,6 @@ public class ItemPickUp : MonoBehaviour {
                 PickUpText.text = "";
             }
 #endif
-        }
-    }
 
     void OnTriggerEnter(Collider hit)
     {
