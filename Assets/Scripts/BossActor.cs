@@ -17,7 +17,12 @@ public class BossActor : MonoBehaviour {
 
     public float BossHealth = 100.0f;
 
+    private float touch_damage_timer = 0.0f;
+    private float touch_damage_time = 1.0f;
+
     private FirstPersonController player;
+
+    private HealthBar player_health;
 
     private float attackTimer = 0;
 
@@ -29,6 +34,7 @@ public class BossActor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<FirstPersonController>();
+        player_health = FindObjectOfType<HealthBar>();
     }
 	
 	// Update is called once per frame
@@ -60,6 +66,20 @@ public class BossActor : MonoBehaviour {
             winTrigger.SetActive(true);
         }
 	}
+
+    void OnTriggerStay(Collider hit)
+    {
+        if(hit.tag == "Player")
+        {
+            touch_damage_timer -= Time.deltaTime;
+
+            if(touch_damage_timer <= 0)
+            {
+                player_health.TakeDamge(5);
+                touch_damage_timer = touch_damage_time;
+            }
+        }
+    }
 
     public void BossTakeDamage(float damage) {
         BossHealth -= damage;

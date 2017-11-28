@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
+//the PlayerWithinRangedPurseRange question asks if the player is within a specified distance
+//from the player, if the condition is true then the behaviour/question return a result of success
+//otherwise it returns failure
+
 public class PlayerWithinRangedPursePange : AIBehaviour {
 
     private FirstPersonController player;

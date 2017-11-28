@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
+//the agent has access to a list of waypoints, if the player within purse range question
+//returns a result of failure the agent will pick a random integer and set and its destination
+//to be the waypoint that waypoint in the list 
+
 public class PatrolAction : AIBehaviour
 {
     private int waypoint_number = 0;
@@ -30,7 +34,7 @@ public class PatrolAction : AIBehaviour
 
             if (patrol_point_timer <= 0)
             {
-                waypoint_number = Random.Range(1, 11);
+                waypoint_number = Random.Range(1, 57);
                 patrol_point_timer = patrol_point_time;
             }
 

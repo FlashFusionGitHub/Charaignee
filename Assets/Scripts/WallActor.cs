@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WallActor : MonoBehaviour {
 
+
+//the wall actor script is attached to a hidden wall in the game,
+//if the player shoots this wall the this gameObject will be destroyed
+
     private float Health = 50.0f;
 	// Use this for initialization
 	void Start () {

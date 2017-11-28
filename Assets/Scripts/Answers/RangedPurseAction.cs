@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
+//The ranged purse action sets the agents destination the the players current position
+//if the player within ranged purse ranged question returns success.
+//When this behaviour/action completes it returns a success result 
+
 public class RangedPurseAction : AIBehaviour {
 
     public PlayerWithinRangedPursePange player_within_ranged_pursue_range;
