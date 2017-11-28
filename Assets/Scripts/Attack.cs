@@ -18,6 +18,22 @@ public class Attack : MonoBehaviour {
 
     private AudioSource audioSource;
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (attacking)
+    //    {
+    //        if (other.tag == "Enemy")
+    //        {
+    //            Debug.Log("hit");
+    //            other.GetComponent<Agent>().agentTakeDamage(damage);
+    //        }
+    //    }
+    //    else if (other.tag == "Wall")
+    //    {
+    //        other.GetComponent<Agent>().agentTakeDamage(damage);
+    //    }
+    //}
+
     // Use this for initialization
     void Start ()
     {
@@ -68,7 +84,6 @@ public class Attack : MonoBehaviour {
 
         if (Physics.Raycast(RayCastOrigin.transform.position, RayCastOrigin.transform.forward, out hit, range))
         {
-            // calls the respective damage function
             if (hit.transform.tag == "Enemy")
                 hit.transform.gameObject.GetComponent<Agent>().agentTakeDamage(damage);
             if (hit.transform.tag == "RangedEnemy")

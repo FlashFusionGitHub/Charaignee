@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using InControl;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -24,18 +26,18 @@ public class WeaponSwitching : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        // allows cycling through weaponry
+	void Update ()
+    {
         if (selected_weapon > 1)
             selected_weapon = 0;
         if (selected_weapon < 0)
             selected_weapon = 1;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            selected_weapon++; // cycles weaponry up
+            selected_weapon++;
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            selected_weapon--; // cycles weaponry down
+            selected_weapon--;
 
 #if UNITY_PS4
         if(gamePad.DPadRight.WasPressed)
@@ -47,27 +49,32 @@ public class WeaponSwitching : MonoBehaviour {
         SelectWeapon();
 	}
 
-    void SelectWeapon() {
+    void SelectWeapon()
+    {
         int i = 0;
 
-        foreach (Transform weapon in transform) {
-            if (haveRevoler == true && haveMeleeWeapon == true) {
+        foreach (Transform weapon in transform)
+        {
+            if (haveRevoler == true && haveMeleeWeapon == true)
+            {
                 if (i == selected_weapon)
-                    weapon.gameObject.SetActive(true); // activates the selected weapon
+                    weapon.gameObject.SetActive(true);
                 else
-                    weapon.gameObject.SetActive(false); // deselects the non-selected weapon
+                    weapon.gameObject.SetActive(false);
                 i++;
             }
         }     
     }
 
-    public void setRevolverState(bool value) {
-        revolver.SetActive(value); // activates the revolver
+    public void setRevolverState(bool value)
+    {
+        revolver.SetActive(value);
         haveRevoler = value;
     }
 
-    public void setMeleeWeaponState(bool value) {
-        MeleeWeapon.SetActive(value); // activates the wand
+    public void setMeleeWeaponState(bool value)
+    {
+        MeleeWeapon.SetActive(value);
         haveMeleeWeapon = value;
     }
 }

@@ -12,7 +12,6 @@ public class Buttons : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        // sets the cursor to visible and unlocked (for use with game-to-menu transition)
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -20,12 +19,12 @@ public class Buttons : MonoBehaviour {
         btn.onClick.AddListener(TaskOnClick);
 	}
 
-    void TaskOnClick() { // when the player clicks on a button:
-        if (play) // if the button is marked as 'play' launches the game scene
+    void TaskOnClick() {
+        if (play)
             SceneManager.LoadScene(1);
-        else if (exit) // if the button is marked as 'exit' quits the application
+        else if (exit)
             Application.Quit();
-        else if (mainMenu) // if the button is marked 'mainMenu' launches the main menu scene
+        else if (mainMenu)
             SceneManager.LoadScene(0);
     }
 }

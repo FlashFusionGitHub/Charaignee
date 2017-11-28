@@ -9,7 +9,8 @@ public class ItemPickUp : MonoBehaviour {
     public Text PickUpText;
     public Text AmmoInGunText;
     public AudioSource audioSourceAmmo;
-    public bool canFire;
+
+    private FirstPersonController player;
 
     private int ammoCount;
     private int ammoInGun;
@@ -18,8 +19,8 @@ public class ItemPickUp : MonoBehaviour {
     private int numberOfKeys = 0;
     private InputDevice gamePad;
     private WeaponSwitching weapon_switching;
-    private FirstPersonController player;
 
+    public bool canFire;
     bool Destroyed;
 
     void Start() {
@@ -37,7 +38,6 @@ public class ItemPickUp : MonoBehaviour {
     }
 
     void Update() {
-        // checks if there is ammo in the player's gun. if there is, they can fire, otherwise, they cannot
         if (ammoInGun > 0)
             canFire = true;
         else
@@ -47,11 +47,11 @@ public class ItemPickUp : MonoBehaviour {
     void OnTriggerStay(Collider hit) {
         if (hit.tag == "Key") {
             PickUpText.text = "Press 'E' to collect key";
-            if (Input.GetKeyDown(KeyCode.E)) { // if the player presses 'E'
-                Destroy(hit.gameObject); // destroys the key
-                numberOfKeys += 1; // adds a key to the player inventory
-                KeysCollectedText.text = "Keys Collected: " + numberOfKeys; // updates the keys collected text
-                PickUpText.text = ""; // removes the collect text
+            if (Input.GetKeyDown(KeyCode.E)) {
+                Destroy(hit.gameObject);
+                numberOfKeys += 1;
+                KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
+                PickUpText.text = "";
             }
 
 #if UNITY_PS4
@@ -64,17 +64,18 @@ public class ItemPickUp : MonoBehaviour {
             }
 #endif
         }
-        if (hit.tag == "Door" && numberOfKeys > 0) {
+        if (hit.tag == "Door" && numberOfKeys > 0)
+        {
             PickUpText.text = "Press 'E' to open door";
-            if (Input.GetKey(KeyCode.E)) {
-                numberOfKeys--; // decrements the amount of keys in the player inventory
+            if (Input.GetKey(KeyCode.E))
+            {
+                numberOfKeys--;
                 KeysCollectedText.text = "Keys Collected: " + numberOfKeys;
-                PickUpText.text = ""; // removes the text display
-                hit.gameObject.SetActive(false); // removes the door
+                PickUpText.text = "";
+                hit.gameObject.SetActive(false);
             }
         }
     }
-
 #if UNITY_PS4
             PickUpText.text = "Press 'Circle' to open door";
             if (gamePad.Action2) {
@@ -86,9 +87,12 @@ public class ItemPickUp : MonoBehaviour {
             }
 #endif
 
-    void OnTriggerEnter(Collider hit) {
-        if (hit.tag == "Ammo") {
-            if (ammoCount < maxAmmo) {
+    void OnTriggerEnter(Collider hit)
+    {
+        if (hit.tag == "Ammo")
+        {
+            if (ammoCount < maxAmmo)
+            {
                 ammoCount += 6;
 
                 if (ammoCount > maxAmmo)
@@ -98,20 +102,24 @@ public class ItemPickUp : MonoBehaviour {
                 audioSourceAmmo.Play();
                 Destroy(hit.gameObject);
             }
+            else
+                return;
         }
 
-        if (hit.tag == "Revolver") {
-            Destroy(hit.gameObject); // destroys the revolver
-            weapon_switching.setRevolverState(true); // adds it to the equipment list
+        if (hit.tag == "Revolver")
+        {
+            Destroy(hit.gameObject);
+            weapon_switching.setRevolverState(true);
         }
 
-        if (hit.tag == "MeleeWeapon") {
-            Destroy(hit.gameObject); // destroys the wand
-            weapon_switching.setMeleeWeaponState(true); // adds it to the equipment list
+        if (hit.tag == "MeleeWeapon")
+        {
+            Destroy(hit.gameObject);
+            weapon_switching.setMeleeWeaponState(true);
         }
     }
 
-    void OnTriggerExit(Collider hit) { // clears the pickup text when the player is leaves an interactable object
+    void OnTriggerExit(Collider hit) {
         PickUpText.text = "";
     }
 
@@ -125,18 +133,20 @@ public class ItemPickUp : MonoBehaviour {
 
     public void reloadGun() {
         if(ammoCount > 0 && ammoInGun < 6) {
-            if (ammoCount <= numberOfBulletsUsed) // if the ammo counter is less than the bullets used, adds the remaining ammo to the gun
+            if (ammoCount <= numberOfBulletsUsed)
                 ammoInGun += ammoCount;
             else
-                ammoInGun = 6; // else sets the ammo in gun to 6
+                ammoInGun = 6;
+
             if (numberOfBulletsUsed <= 0)
                 ammoCount -= 6;
             else
-                ammoCount -= numberOfBulletsUsed; 
-            if (ammoCount < 0) // if ammoCount is less than 0, sets it to 0
+                ammoCount -= numberOfBulletsUsed;
+
+            if (ammoCount < 0)
                 ammoCount = 0;
 
-            UpdateAmmoStatusText(); // updates the ammo text
+            UpdateAmmoStatusText();
 
             numberOfBulletsUsed = 0;
         }

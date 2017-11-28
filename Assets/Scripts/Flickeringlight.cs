@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Flickeringlight : MonoBehaviour {
@@ -14,10 +15,12 @@ public class Flickeringlight : MonoBehaviour {
       
 }
 
-    IEnumerator Flashing () {
-        while (true) {
+    IEnumerator Flashing ()
+    {
+        while (true)
+        {
             yield return new WaitForSeconds(0.5f);
-            testLight.enabled = ! testLight.enabled; // after a set time, flickers the light
+            testLight.enabled = ! testLight.enabled;
         }	
 	}
 }
