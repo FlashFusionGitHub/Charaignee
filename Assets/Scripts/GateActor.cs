@@ -11,16 +11,10 @@ public class GateActor : MonoBehaviour {
 	void Start () {
         gateCollider = GetComponent<Collider>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnTriggerEnter(Collider hit)
     {
-        if(hit.tag == "Player")
-        {
+        if (hit.tag == "Player") { // if the player is withing range of the gate, opens the gate
             gate_animator.SetBool("isOpen", true);
             gateCollider.enabled = false;
         }

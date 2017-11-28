@@ -40,11 +40,10 @@ public class Agent : MonoBehaviour{
 
         if (player_within_attack_range.Execute(agent) == AIBehaviour.BehaviourResult.Success) {
             aibehaviour3.Execute(agent);
-            melee_animator.SetBool("isAttacking", true);
+            melee_animator.SetBool("isAttacking", true); // if the player is within attack range, sets the attack animation to play
         } else
-            melee_animator.SetBool("isAttacking", false);
+            melee_animator.SetBool("isAttacking", false); // otherwise, sets it not to
     
-
         if(health <= 0)
             Destroy(agent.gameObject);
     }

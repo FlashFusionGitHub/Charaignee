@@ -4,45 +4,37 @@ using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour {
-    public Image currentHealthbar;
-    public Text ratioText;
 
     public  float health = 100;
-
-    private float max_health = 100;
-    private float enemyAttackTimer = 0;
-    private float enemyAttackTime = 5;
-    private FirstPersonController player;
-
+    public Image currentHealthbar;
+    public Text ratioText;
     public AudioSource audioSourceHealth;
 
-
+    private float max_health = 100;
+    private FirstPersonController player;
+    
     void Start() {
         player = FindObjectOfType<FirstPersonController>();
     }
 
     void OnTriggerEnter(Collider hit) {
-        //added if health less than max health condition and disables gameobject on use - brodie
         if(hit.tag == "Health" && health < max_health) {
-            HealDamage(20);
-            hit.gameObject.SetActive(false);
-
+            HealDamage(20); // heals for 20 health
+            hit.gameObject.SetActive(false); // destroys the healing item
         }
     }
 
     void UpdateHealthBar() {
-        float ratio = health / max_health;
+        float ratio = health / max_health; // makes a ratio of current health to maximum health
 
-        currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1);
-        ratioText.text = (ratio * 100).ToString() + '%';
+        currentHealthbar.rectTransform.localScale = new Vector3(ratio, 1, 1); // changes the health bar size based on the ratio
+        ratioText.text = (ratio * 100).ToString() + '%'; // displays the player health numerically
     }
 
     public void TakeDamge(float damage) {
         health -= damage;
 
-        if (health <= 0) {
-            player.transform.position = new Vector3(0, 1.5f, 0);
-            health = max_health;
+        if (health <= 0) { // when the player dies, goes the the lose screen
             SceneManager.LoadScene(2);
         }
 
@@ -50,10 +42,10 @@ public class HealthBar : MonoBehaviour {
     }
 
     private void HealDamage(float heal) {
-        audioSourceHealth.Play();
-        health += heal;
+        audioSourceHealth.Play(); // plays the heal sound
+        health += heal; // adds the heal amount to the health
 
-        if (health > 100)
+        if (health > max_health) // if the healing goes over the maximum bed, sets it to 100
             health = max_health;
 
         UpdateHealthBar();

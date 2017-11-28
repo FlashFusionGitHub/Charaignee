@@ -1,16 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine.AI;
 
 public class Selector : Composite {
 
-    public override BehaviourResult Execute(NavMeshAgent agent)
-    {
-        foreach (AIBehaviour child in child_behaviours)
-        {
+    public override BehaviourResult Execute(NavMeshAgent agent) {
+        foreach (AIBehaviour child in child_behaviours) {
             if (child.Execute(agent) == BehaviourResult.Success)
-                return BehaviourResult.Success;
+                return BehaviourResult.Success; // if the behaviour secceeds, returns success
         }
 
         return BehaviourResult.Failure;
