@@ -5,6 +5,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
+
+//if the player within ranged attack question returns a result of success
+// the agent will set its velocity to zero, it will then shoot a projectile at the
+//player when its attack timer is zero, when it has fired the attack timer will reset
+//when the action is complete it will return a result of success
+
 public class RangedAttackAction : AIBehaviour {
 
     public GameObject projectile;

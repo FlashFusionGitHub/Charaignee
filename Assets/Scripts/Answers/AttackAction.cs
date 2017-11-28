@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.AI;
 
+//if the player within attack question returns a result of success
+//the agent will set its velocity to zero, it will then begin attacking the 
+//player when its attack timer is zero, when it has completed the attack its attack timer will reset
+//when the action is complete it will return a result of success
+
 public class AttackAction : AIBehaviour
 {
     public int damageToApply = 20;

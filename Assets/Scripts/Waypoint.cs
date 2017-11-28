@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//the waypoint script uses unitys gizmos method OnDrawGizmos to draw gizmos of a specifed color at a chosen postion in 3d space
+//each time a new child game object is added to this it will become a gizmo, we do this using the GetComponentsInChildren<Transform>();
+//adding each new child object to an array of gameobjects
+ 
 public class Waypoint : MonoBehaviour {
 
     //Colour of way point gizmo
