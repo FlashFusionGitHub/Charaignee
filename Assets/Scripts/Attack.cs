@@ -89,7 +89,7 @@ public class Attack : MonoBehaviour {
             if (hit.transform.tag == "Boss")
                 hit.transform.gameObject.GetComponent<BossActor>().BossTakeDamage(damage);
             if (hit.transform.tag == "Wall")
-                hit.transform.gameObject.GetComponent<BossActor>().BossTakeDamage(damage);
+                hit.transform.gameObject.GetComponent<WallActor>().wallTakeDamage(damage);
         }
     }
 }
