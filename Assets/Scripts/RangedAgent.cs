@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Animations;
 
 public class RangedAgent : MonoBehaviour {
 
-    public NavMeshAgent agent;
-
-    public Animator rangeEnemyAnimator;
     public float health = 100;
+    public Animator rangeEnemyAnimator;
+
+    public NavMeshAgent agent;
 
     public RangedPatrolAction patrol;
     public RangedPurseAction purse;
@@ -38,39 +35,30 @@ public class RangedAgent : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Failure)
-        {
+    void Update() {
+        if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Failure) {
             aibehaviour.Execute(agent);
             rangeEnemyAnimator.SetBool("isWalking", true);
             rangeEnemyAnimator.SetBool("isShooting", false);
         }
 
-
-        if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Success)
-        {
+        if (attackRange.Execute(agent) == AIBehaviour.BehaviourResult.Success) {
             aibehaviour2.Execute(agent);
             rangeEnemyAnimator.SetBool("isWalking", false);
         }
 
-        if (attackRange2.Execute(agent) == AIBehaviour.BehaviourResult.Success)
-        {
+        if (attackRange2.Execute(agent) == AIBehaviour.BehaviourResult.Success) {
             aibehaviour3.Execute(agent);
             rangeEnemyAnimator.SetBool("isShooting", true);
         }
 
-
-        if (health <= 0)
-        {
+        if (health <= 0) {
             Destroy(agent.gameObject);
         }
     }
 
-    public void agentTakeDamage(float playerAttack)
-    {
+    public void agentTakeDamage(float playerAttack) {
         health -= playerAttack;
-
         Debug.Log(health);
     }
 }

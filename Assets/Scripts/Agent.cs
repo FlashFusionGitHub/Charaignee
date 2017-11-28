@@ -44,7 +44,6 @@ public class Agent : MonoBehaviour{
         } else
             melee_animator.SetBool("isAttacking", false);
     
-
         if(health <= 0)
             Destroy(agent.gameObject);
     }

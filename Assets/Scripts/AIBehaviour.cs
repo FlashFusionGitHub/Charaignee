@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class AIBehaviour : MonoBehaviour{
 
-    public enum BehaviourResult
-    {
+    public enum BehaviourResult {
         Success = 0, Failure
     };
 
