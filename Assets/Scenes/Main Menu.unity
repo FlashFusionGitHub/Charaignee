@@ -628,8 +628,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   play: 0
-  exit: 0
-  mainMenu: 1
+  exit: 1
+  mainMenu: 0
 --- !u!114 &1332969889
 MonoBehaviour:
   m_ObjectHideFlags: 0
